@@ -21,6 +21,7 @@ Example JSON message (after deserialization) to be analyzed
 import os
 import json  # handle JSON parsing
 from collections import defaultdict  # data structure for counting author occurrences
+import pandas as pd  # data manipulation library
 
 # Import external packages
 from dotenv import load_dotenv
