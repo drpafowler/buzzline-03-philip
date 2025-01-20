@@ -1,5 +1,5 @@
 """
-json_producer_case.py
+json_producer_philip.py
 
 Stream JSON data to a Kafka topic.
 
@@ -72,7 +72,7 @@ DATA_FOLDER: pathlib.Path = PROJECT_ROOT.joinpath("data")
 logger.info(f"Data folder: {DATA_FOLDER}")
 
 # Set the name of the data file
-DATA_FILE: pathlib.Path = DATA_FOLDER.joinpath("buzz.json")
+DATA_FILE: pathlib.Path = DATA_FOLDER.joinpath("banksdata.json")
 logger.info(f"Data file: {DATA_FILE}")
 
 #####################################

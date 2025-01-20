@@ -60,3 +60,213 @@
 2025-01-20 14:20:25.833 | INFO     | __main__:main:177 - END producer.
 2025-01-20 14:20:28.439 | WARNING  | __main__:main:184 - Consumer interrupted by user.
 2025-01-20 14:20:28.446 | INFO     | __main__:main:189 - Kafka consumer for topic 'smoker_csv' closed.
+2025-01-20 15:25:13.978 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs/project_log.log
+2025-01-20 15:25:13.980 | INFO     | __main__:<module>:68 - Project root: /home/philip/nwmissouri/buzzline-03-philip
+2025-01-20 15:25:13.980 | INFO     | __main__:<module>:72 - Data folder: /home/philip/nwmissouri/buzzline-03-philip/data
+2025-01-20 15:25:13.980 | INFO     | __main__:<module>:76 - Data file: /home/philip/nwmissouri/buzzline-03-philip/data/banksdata.json
+2025-01-20 15:25:13.980 | INFO     | __main__:main:136 - START producer.
+2025-01-20 15:25:13.980 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-01-20 15:25:13.980 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-01-20 15:25:13.980 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-20 15:25:14.300 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'AQw24yRlTRWUUPd2A8Fx3A', 'controller_id': 1001}
+2025-01-20 15:25:14.300 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-01-20 15:25:14.300 | INFO     | __main__:get_message_interval:57 - Message interval: 1 seconds
+2025-01-20 15:25:14.301 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-20 15:25:14.301 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-01-20 15:25:14.408 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-01-20 15:25:14.408 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-20 15:25:14.728 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'buzzline_json' already exists. Clearing it out...
+2025-01-20 15:25:14.728 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-20 15:25:15.051 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'buzzline_json': list indices must be integers or slices, not ConfigResource
+2025-01-20 15:25:15.051 | INFO     | __main__:main:159 - Kafka topic 'buzzline_json' is ready.
+2025-01-20 15:25:15.051 | INFO     | __main__:main:165 - Starting message production to topic 'buzzline_json'...
+2025-01-20 15:25:15.051 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: /home/philip/nwmissouri/buzzline-03-philip/data/banksdata.json
+2025-01-20 15:25:15.052 | INFO     | __main__:generate_messages:97 - Reading data from file: /home/philip/nwmissouri/buzzline-03-philip/data/banksdata.json
+2025-01-20 15:25:15.053 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '1', 'Bank Name': 'Industrial and Commercial Bank of China', 'Total Assets (2023, US$ billion)': '6,303.44'}
+2025-01-20 15:25:16.054 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '2', 'Bank Name': 'Agricultural Bank of China', 'Total Assets (2023, US$ billion)': '5,623.12'}
+2025-01-20 15:25:17.056 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '3', 'Bank Name': 'China Construction Bank', 'Total Assets (2023, US$ billion)': '5,400.28'}
+2025-01-20 15:25:18.057 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '4', 'Bank Name': 'Bank of China', 'Total Assets (2023, US$ billion)': '4,578.28'}
+2025-01-20 15:25:19.059 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '5', 'Bank Name': 'JPMorgan Chase', 'Total Assets (2023, US$ billion)': '3,875.39'}
+2025-01-20 15:25:20.061 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '6', 'Bank Name': 'Bank of America', 'Total Assets (2023, US$ billion)': '3,180.15'}
+2025-01-20 15:25:21.062 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '7', 'Bank Name': 'HSBC', 'Total Assets (2023, US$ billion)': '2,919.84'}
+2025-01-20 15:25:22.064 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '8', 'Bank Name': 'BNP Paribas', 'Total Assets (2023, US$ billion)': '2,867.44'}
+2025-01-20 15:25:23.065 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '9', 'Bank Name': 'Mitsubishi UFJ Financial Group', 'Total Assets (2023, US$ billion)': '2,816.77'}
+2025-01-20 15:25:24.066 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '10', 'Bank Name': 'Crédit Agricole', 'Total Assets (2023, US$ billion)': '2,736.95'}
+2025-01-20 15:25:25.066 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '11', 'Bank Name': 'Postal Savings Bank of China', 'Total Assets (2023, US$ billion)': '2,217.86'}
+2025-01-20 15:25:25.070 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs/project_log.log
+2025-01-20 15:25:25.071 | INFO     | __main__:main:124 - START consumer.
+2025-01-20 15:25:25.071 | INFO     | __main__:get_kafka_topic:46 - Kafka topic: buzzline_json
+2025-01-20 15:25:25.071 | INFO     | __main__:get_kafka_consumer_group_id:53 - Kafka consumer group id: buzz_group
+2025-01-20 15:25:25.071 | INFO     | __main__:main:129 - Consumer: Topic 'buzzline_json' and group 'buzz_group'...
+2025-01-20 15:25:25.071 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-20 15:25:25.071 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline_json' and group ID='buzz_group'.
+2025-01-20 15:25:25.176 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-01-20 15:25:25.176 | INFO     | __main__:main:135 - Polling messages from topic 'buzzline_json'...
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:89 - Processed JSON message: {'message': 'Distributed systems are fascinating.', 'author': 'Diana'}
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:95 - Message received from author: Diana
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1}
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '1', 'Bank Name': 'Industrial and Commercial Bank of China', 'Total Assets (2023, US$ billion)': '6,303.44'}
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 1}
+2025-01-20 15:25:25.393 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '2', 'Bank Name': 'Agricultural Bank of China', 'Total Assets (2023, US$ billion)': '5,623.12'}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 2}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '3', 'Bank Name': 'China Construction Bank', 'Total Assets (2023, US$ billion)': '5,400.28'}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 3}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '4', 'Bank Name': 'Bank of China', 'Total Assets (2023, US$ billion)': '4,578.28'}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 4}
+2025-01-20 15:25:25.394 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '5', 'Bank Name': 'JPMorgan Chase', 'Total Assets (2023, US$ billion)': '3,875.39'}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 5}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '6', 'Bank Name': 'Bank of America', 'Total Assets (2023, US$ billion)': '3,180.15'}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 6}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '7', 'Bank Name': 'HSBC', 'Total Assets (2023, US$ billion)': '2,919.84'}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 7}
+2025-01-20 15:25:25.395 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '8', 'Bank Name': 'BNP Paribas', 'Total Assets (2023, US$ billion)': '2,867.44'}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 8}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '9', 'Bank Name': 'Mitsubishi UFJ Financial Group', 'Total Assets (2023, US$ billion)': '2,816.77'}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 9}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '10', 'Bank Name': 'Crédit Agricole', 'Total Assets (2023, US$ billion)': '2,736.95'}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 10}
+2025-01-20 15:25:25.396 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '11', 'Bank Name': 'Postal Savings Bank of China', 'Total Assets (2023, US$ billion)': '2,217.86'}
+2025-01-20 15:25:25.397 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:25.397 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 11}
+2025-01-20 15:25:26.067 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '12', 'Bank Name': 'Citigroup', 'Total Assets (2023, US$ billion)': '2,200.83'}
+2025-01-20 15:25:26.070 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '12', 'Bank Name': 'Citigroup', 'Total Assets (2023, US$ billion)': '2,200.83'}
+2025-01-20 15:25:26.070 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:26.070 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 12}
+2025-01-20 15:25:27.067 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '13', 'Bank Name': 'SMBC Group', 'Total Assets (2023, US$ billion)': '2,027.34'}
+2025-01-20 15:25:27.068 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '13', 'Bank Name': 'SMBC Group', 'Total Assets (2023, US$ billion)': '2,027.34'}
+2025-01-20 15:25:27.068 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:27.068 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 13}
+2025-01-20 15:25:28.068 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '14', 'Bank Name': 'Banco Santander', 'Total Assets (2023, US$ billion)': '1,986.36'}
+2025-01-20 15:25:28.071 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '14', 'Bank Name': 'Banco Santander', 'Total Assets (2023, US$ billion)': '1,986.36'}
+2025-01-20 15:25:28.071 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:28.072 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 14}
+2025-01-20 15:25:29.069 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '15', 'Bank Name': 'Bank of Communications', 'Total Assets (2023, US$ billion)': '1,982.89'}
+2025-01-20 15:25:29.072 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '15', 'Bank Name': 'Bank of Communications', 'Total Assets (2023, US$ billion)': '1,982.89'}
+2025-01-20 15:25:29.073 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:29.073 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 15}
+2025-01-20 15:25:30.069 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '16', 'Bank Name': 'Wells Fargo', 'Total Assets (2023, US$ billion)': '1,932.47'}
+2025-01-20 15:25:30.073 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '16', 'Bank Name': 'Wells Fargo', 'Total Assets (2023, US$ billion)': '1,932.47'}
+2025-01-20 15:25:30.073 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:30.073 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 16}
+2025-01-20 15:25:31.070 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '17', 'Bank Name': 'Mizuho Financial Group', 'Total Assets (2023, US$ billion)': '1,923.56'}
+2025-01-20 15:25:31.074 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '17', 'Bank Name': 'Mizuho Financial Group', 'Total Assets (2023, US$ billion)': '1,923.56'}
+2025-01-20 15:25:31.074 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:31.074 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 17}
+2025-01-20 15:25:32.071 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '18', 'Bank Name': 'Barclays', 'Total Assets (2023, US$ billion)': '1,891.72'}
+2025-01-20 15:25:32.075 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '18', 'Bank Name': 'Barclays', 'Total Assets (2023, US$ billion)': '1,891.72'}
+2025-01-20 15:25:32.075 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:32.075 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 18}
+2025-01-20 15:25:33.073 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '19', 'Bank Name': 'Société Générale', 'Total Assets (2023, US$ billion)': '1,717.49'}
+2025-01-20 15:25:33.077 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '19', 'Bank Name': 'Société Générale', 'Total Assets (2023, US$ billion)': '1,717.49'}
+2025-01-20 15:25:33.077 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:33.077 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 19}
+2025-01-20 15:25:34.074 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '20', 'Bank Name': 'UBS', 'Total Assets (2023, US$ billion)': '1,717.25'}
+2025-01-20 15:25:34.077 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '20', 'Bank Name': 'UBS', 'Total Assets (2023, US$ billion)': '1,717.25'}
+2025-01-20 15:25:34.077 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:34.077 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 20}
+2025-01-20 15:25:35.075 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '21', 'Bank Name': 'Groupe BPCE', 'Total Assets (2023, US$ billion)': '1,706.80'}
+2025-01-20 15:25:35.078 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '21', 'Bank Name': 'Groupe BPCE', 'Total Assets (2023, US$ billion)': '1,706.80'}
+2025-01-20 15:25:35.078 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:35.078 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 21}
+2025-01-20 15:25:36.077 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '22', 'Bank Name': 'Goldman Sachs', 'Total Assets (2023, US$ billion)': '1,641.59'}
+2025-01-20 15:25:36.080 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '22', 'Bank Name': 'Goldman Sachs', 'Total Assets (2023, US$ billion)': '1,641.59'}
+2025-01-20 15:25:36.080 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:36.080 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 22}
+2025-01-20 15:25:37.078 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '23', 'Bank Name': 'Japan Post Bank', 'Total Assets (2023, US$ billion)': '1,625.60'}
+2025-01-20 15:25:37.081 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '23', 'Bank Name': 'Japan Post Bank', 'Total Assets (2023, US$ billion)': '1,625.60'}
+2025-01-20 15:25:37.082 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:37.082 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 23}
+2025-01-20 15:25:38.079 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '24', 'Bank Name': 'Royal Bank of Canada', 'Total Assets (2023, US$ billion)': '1,566.41'}
+2025-01-20 15:25:38.083 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '24', 'Bank Name': 'Royal Bank of Canada', 'Total Assets (2023, US$ billion)': '1,566.41'}
+2025-01-20 15:25:38.083 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:38.083 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 24}
+2025-01-20 15:25:39.080 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '25', 'Bank Name': 'China Merchants Bank', 'Total Assets (2023, US$ billion)': '1,555.30'}
+2025-01-20 15:25:39.084 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '25', 'Bank Name': 'China Merchants Bank', 'Total Assets (2023, US$ billion)': '1,555.30'}
+2025-01-20 15:25:39.084 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:39.084 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 25}
+2025-01-20 15:25:40.081 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '26', 'Bank Name': 'Deutsche Bank', 'Total Assets (2023, US$ billion)': '1,450.57'}
+2025-01-20 15:25:40.084 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '26', 'Bank Name': 'Deutsche Bank', 'Total Assets (2023, US$ billion)': '1,450.57'}
+2025-01-20 15:25:40.085 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:40.085 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 26}
+2025-01-20 15:25:41.082 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '27', 'Bank Name': 'Industrial Bank (China)', 'Total Assets (2023, US$ billion)': '1,432.59'}
+2025-01-20 15:25:41.085 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '27', 'Bank Name': 'Industrial Bank (China)', 'Total Assets (2023, US$ billion)': '1,432.59'}
+2025-01-20 15:25:41.085 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:41.085 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 27}
+2025-01-20 15:25:42.083 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '28', 'Bank Name': 'Toronto-Dominion Bank', 'Total Assets (2023, US$ billion)': '1,428.29'}
+2025-01-20 15:25:42.086 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '28', 'Bank Name': 'Toronto-Dominion Bank', 'Total Assets (2023, US$ billion)': '1,428.29'}
+2025-01-20 15:25:42.086 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:42.087 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 28}
+2025-01-20 15:25:43.084 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '29', 'Bank Name': 'China CITIC Bank', 'Total Assets (2023, US$ billion)': '1,276.63'}
+2025-01-20 15:25:43.088 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '29', 'Bank Name': 'China CITIC Bank', 'Total Assets (2023, US$ billion)': '1,276.63'}
+2025-01-20 15:25:43.088 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:43.088 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 29}
+2025-01-20 15:25:44.086 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '30', 'Bank Name': 'Crédit Mutuel', 'Total Assets (2023, US$ billion)': '1,262.95'}
+2025-01-20 15:25:44.089 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '30', 'Bank Name': 'Crédit Mutuel', 'Total Assets (2023, US$ billion)': '1,262.95'}
+2025-01-20 15:25:44.089 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:44.089 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 30}
+2025-01-20 15:25:45.087 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '31', 'Bank Name': 'Shanghai Pudong Development Bank', 'Total Assets (2023, US$ billion)': '1,207.18'}
+2025-01-20 15:25:45.091 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '31', 'Bank Name': 'Shanghai Pudong Development Bank', 'Total Assets (2023, US$ billion)': '1,207.18'}
+2025-01-20 15:25:45.091 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:45.091 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 31}
+2025-01-20 15:25:46.088 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '32', 'Bank Name': 'Morgan Stanley', 'Total Assets (2023, US$ billion)': '1,193.69'}
+2025-01-20 15:25:46.091 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '32', 'Bank Name': 'Morgan Stanley', 'Total Assets (2023, US$ billion)': '1,193.69'}
+2025-01-20 15:25:46.092 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:46.092 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 32}
+2025-01-20 15:25:47.089 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '33', 'Bank Name': 'Lloyds Banking Group', 'Total Assets (2023, US$ billion)': '1,122.76'}
+2025-01-20 15:25:47.092 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '33', 'Bank Name': 'Lloyds Banking Group', 'Total Assets (2023, US$ billion)': '1,122.76'}
+2025-01-20 15:25:47.092 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:47.092 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 33}
+2025-01-20 15:25:48.090 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '34', 'Bank Name': 'China Minsheng Bank', 'Total Assets (2023, US$ billion)': '1,082.37'}
+2025-01-20 15:25:48.093 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '34', 'Bank Name': 'China Minsheng Bank', 'Total Assets (2023, US$ billion)': '1,082.37'}
+2025-01-20 15:25:48.093 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:48.094 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 34}
+2025-01-20 15:25:49.091 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '35', 'Bank Name': 'ING Group', 'Total Assets (2023, US$ billion)': '1,078.35'}
+2025-01-20 15:25:49.094 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '35', 'Bank Name': 'ING Group', 'Total Assets (2023, US$ billion)': '1,078.35'}
+2025-01-20 15:25:49.095 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:49.095 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 35}
+2025-01-20 15:25:50.092 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '36', 'Bank Name': 'Intesa Sanpaolo', 'Total Assets (2023, US$ billion)': '1,066.74'}
+2025-01-20 15:25:50.095 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '36', 'Bank Name': 'Intesa Sanpaolo', 'Total Assets (2023, US$ billion)': '1,066.74'}
+2025-01-20 15:25:50.095 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:50.095 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 36}
+2025-01-20 15:25:51.093 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '37', 'Bank Name': 'Scotiabank', 'Total Assets (2023, US$ billion)': '1,041.11'}
+2025-01-20 15:25:51.097 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '37', 'Bank Name': 'Scotiabank', 'Total Assets (2023, US$ billion)': '1,041.11'}
+2025-01-20 15:25:51.097 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:51.097 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 37}
+2025-01-20 15:25:52.095 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '38', 'Bank Name': 'Bank of Montreal', 'Total Assets (2023, US$ billion)': '990.19'}
+2025-01-20 15:25:52.098 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '38', 'Bank Name': 'Bank of Montreal', 'Total Assets (2023, US$ billion)': '990.19'}
+2025-01-20 15:25:52.098 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:52.099 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 38}
+2025-01-20 15:25:53.096 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '39', 'Bank Name': 'China Everbright Bank', 'Total Assets (2023, US$ billion)': '955.14'}
+2025-01-20 15:25:53.100 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '39', 'Bank Name': 'China Everbright Bank', 'Total Assets (2023, US$ billion)': '955.14'}
+2025-01-20 15:25:53.100 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:53.100 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 39}
+2025-01-20 15:25:54.098 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '40', 'Bank Name': 'NatWest Group', 'Total Assets (2023, US$ billion)': '882.30'}
+2025-01-20 15:25:54.101 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '40', 'Bank Name': 'NatWest Group', 'Total Assets (2023, US$ billion)': '882.30'}
+2025-01-20 15:25:54.102 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:54.102 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 40}
+2025-01-20 15:25:55.099 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '41', 'Bank Name': 'UniCredit', 'Total Assets (2023, US$ billion)': '872.90'}
+2025-01-20 15:25:55.103 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '41', 'Bank Name': 'UniCredit', 'Total Assets (2023, US$ billion)': '872.90'}
+2025-01-20 15:25:55.103 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:55.103 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 41}
+2025-01-20 15:25:56.100 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '42', 'Bank Name': 'Commonwealth Bank', 'Total Assets (2023, US$ billion)': '868.74'}
+2025-01-20 15:25:56.104 | INFO     | __main__:process_message:89 - Processed JSON message: {'Rank': '42', 'Bank Name': 'Commonwealth Bank', 'Total Assets (2023, US$ billion)': '868.74'}
+2025-01-20 15:25:56.104 | INFO     | __main__:process_message:95 - Message received from author: unknown
+2025-01-20 15:25:56.104 | INFO     | __main__:process_message:101 - Updated author counts: {'Diana': 1, 'unknown': 42}
+2025-01-20 15:25:56.420 | WARNING  | __main__:main:142 - Consumer interrupted by user.
+2025-01-20 15:25:56.426 | INFO     | __main__:main:147 - Kafka consumer for topic 'buzzline_json' closed.
+2025-01-20 15:25:56.427 | INFO     | __main__:main:149 - END consumer for topic 'buzzline_json' and group 'buzz_group'.
+2025-01-20 15:25:57.101 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '43', 'Bank Name': 'Banco Bilbao Vizcaya Argentaria', 'Total Assets (2023, US$ billion)': '857.25'}
+2025-01-20 15:25:58.102 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'Rank': '44', 'Bank Name': 'Standard Chartered', 'Total Assets (2023, US$ billion)': '822.84'}
+2025-01-20 15:25:58.836 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-01-20 15:25:58.838 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-01-20 15:25:58.838 | INFO     | __main__:main:180 - END producer.
