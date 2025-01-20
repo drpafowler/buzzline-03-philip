@@ -1,4 +1,4 @@
-# buzzline-03-case
+# buzzline-03-philip
 
 Streaming data does not have to be simple text.
 Many of us are familiar with streaming video content and audio (e.g. music) files. 
@@ -40,6 +40,8 @@ See instructions at [SETUP-KAFKA.md] to:
 
 ## Task 5. Start a JSON Producer
 
+json data is from https://www.kaggle.com/datasets/iamramzanai/top-100-largest-banks and is a list of the top 100 largest banks in the world.
+
 In VS Code, open a terminal.
 Use the commands below to activate .venv, and start the producer. 
 
@@ -47,13 +49,13 @@ Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.json_producer_case
+py -m producers.json_producer_philip
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m producers.json_producer_case
+python3 -m producers.json_producer_philip
 ```
 
 What did we name the topic used with JSON data? 
@@ -69,13 +71,13 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.json_consumer_case
+py -m consumers.json_consumer_philip
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m consumers.json_consumer_case
+python3 -m consumers.json_consumer_philip
 ```
 
 What did we name the topic used with JSON data? 
