@@ -97,6 +97,8 @@ numpy
 
 # Data manipulation and analysis
 pandas
+matplotlib
+plotly
 
 # ======================================================
 # KAFKA MESSAGE BROKER INTEGRATION

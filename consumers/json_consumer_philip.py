@@ -23,6 +23,7 @@ import json  # handle JSON parsing
 from collections import defaultdict  # data structure for counting author occurrences
 import pandas as pd  # data manipulation library
 
+
 # Import external packages
 from dotenv import load_dotenv
 
@@ -102,6 +103,22 @@ def process_message(message: str) -> None:
             logger.info(f"Updated author counts: {dict(author_counts)}")
         else:
             logger.error(f"Expected a dictionary but got: {type(message_dict)}")
+        
+        # add the message to a pandas dataframe
+        # Check if the dataframe exists in the global scope
+        global df
+        if 'df' not in globals():
+            df = pd.DataFrame([message_dict])
+        else:
+            # Check if the bank already exists in the dataframe
+            if not df[df['Bank Name'] == message_dict.get('Bank Name')].empty:
+                logger.info(f"Bank {message_dict.get('Bank Name')} already exists in the dataframe.")
+            else:
+                df = pd.concat([df, pd.DataFrame([message_dict])], ignore_index=True)
+                # df.to_csv('data/banksdata.csv', index=False) # used for testing
+        
+        logger.info(f"Dataframe: {df}")
+
 
     except json.JSONDecodeError:
         logger.error(f"Invalid JSON message: {message}")
