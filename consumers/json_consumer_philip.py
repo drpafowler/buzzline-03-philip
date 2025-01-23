@@ -115,7 +115,7 @@ def process_message(message: str) -> None:
                 logger.info(f"Bank {message_dict.get('Bank Name')} already exists in the dataframe.")
             else:
                 df = pd.concat([df, pd.DataFrame([message_dict])], ignore_index=True)
-                # df.to_csv('data/banksdata.csv', index=False) # used for testing
+                df.to_csv('data/banksdata.csv', index=False) # used for testing
         
         logger.info(f"Dataframe: {df}")
 

@@ -17699,3 +17699,11 @@
 2025-01-20 17:15:55.943 | WARNING  | __main__:main:173 - Producer interrupted by user.
 2025-01-20 17:15:55.944 | INFO     | __main__:main:178 - Kafka producer closed.
 2025-01-20 17:15:55.945 | INFO     | __main__:main:180 - END producer.
+2025-01-21 12:25:10.560 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs/project_log.log
+2025-01-21 12:25:10.562 | INFO     | __main__:main:142 - START consumer.
+2025-01-21 12:25:10.562 | INFO     | __main__:get_kafka_topic:48 - Kafka topic: buzzline_json
+2025-01-21 12:25:10.562 | INFO     | __main__:get_kafka_consumer_group_id:55 - Kafka consumer group id: buzz_group
+2025-01-21 12:25:10.562 | INFO     | __main__:main:147 - Consumer: Topic 'buzzline_json' and group 'buzz_group'...
+2025-01-21 12:25:10.562 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-01-21 12:25:10.562 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline_json' and group ID='buzz_group'.
+2025-01-21 12:25:10.612 | ERROR    | utils.utils_consumer:create_kafka_consumer:62 - Error creating Kafka consumer: NoBrokersAvailable
