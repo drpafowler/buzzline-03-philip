@@ -11,3 +11,5 @@ __pycache__/
 
 # macOS system files
 .DS_Store
+data/hourly_data.csv
+data/hourly_data_clean.csv
