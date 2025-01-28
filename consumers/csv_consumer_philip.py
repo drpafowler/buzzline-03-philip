@@ -28,6 +28,13 @@ from dotenv import load_dotenv
 from utils.utils_consumer import create_kafka_consumer
 from utils.utils_logger import logger
 
+# Import modules for plotting
+import datetime as dt
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import pandas as pd
+import csv
+
 #####################################
 # Load Environment Variables
 #####################################
@@ -101,10 +108,42 @@ def detect_stall(rolling_window_deque: deque) -> bool:
     logger.debug(f"Temperature range: {temp_range}°F. Stalled: {is_stalled}")
     return is_stalled
 
+#####################################
+# Plotting
+#####################################
+
+def setup_plot():
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+    xs = []
+    ys = []
+    return fig, ax, xs, ys
+
+fig, ax, xs, ys = setup_plot()
+
+def animate(i, xs, ys):
+    xs.clear()
+    ys.clear()
+    with open('data/data.csv', 'r') as csvfile:
+        lines = csv.reader(csvfile, delimiter=',')
+        for row in lines:
+            x = row[0]
+            y = row[1]
+            xs.append(x)
+            ys.append(y)
+        ax.clear()
+        ax.plot(xs, ys)
+        plt.xlabel('Time')
+        plt.ylabel('Temperature')
+        plt.title('Temperature vs Time')
+        plt.xticks(rotation=45)
+
+ani = animation.FuncAnimation(fig, animate, fargs=(xs, ys), interval=1000)
+
 
 #####################################
 # Function to process a single message
-# #####################################
+######################################
 
 
 def process_message(message: str, rolling_window: deque, window_size: int) -> None:
@@ -125,6 +164,12 @@ def process_message(message: str, rolling_window: deque, window_size: int) -> No
         temperature = data.get("temperature")
         timestamp = data.get("timestamp")
         logger.info(f"Processed JSON message: {data}")
+
+        # Parse the JSON string into a dataframe
+        data = json.loads(message)
+        df=pd.DataFrame(data,index=[0])
+        df.to_csv('data/data.csv',mode='a',header=False, index=False)
+
 
         # Ensure the required fields are present
         if temperature is None or timestamp is None:
@@ -158,6 +203,7 @@ def main() -> None:
     - Reads the Kafka topic name and consumer group ID from environment variables.
     - Creates a Kafka consumer using the `create_kafka_consumer` utility.
     - Polls and processes messages from the Kafka topic.
+    - Sets up and runs the plot animation.
     """
     logger.info("START consumer.")
 
@@ -173,6 +219,7 @@ def main() -> None:
     # Create the Kafka consumer using the helpful utility function.
     consumer = create_kafka_consumer(topic, group_id)
 
+
     # Poll and process messages
     logger.info(f"Polling messages from topic '{topic}'...")
     try:
@@ -187,6 +234,14 @@ def main() -> None:
     finally:
         consumer.close()
         logger.info(f"Kafka consumer for topic '{topic}' closed.")
+
+
+    main()
+
+    # Setup and run the plot animation
+    fig, ax, xs, ys = setup_plot()
+    ani = animation.FuncAnimation(fig, animate, fargs=(xs, ys), interval=1000, cache_frame_data=False)
+    plt.show()
 
 
 #####################################
