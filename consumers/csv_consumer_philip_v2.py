@@ -107,7 +107,7 @@ def process_message(message: str, rolling_window: deque, window_size: int) -> No
         wetbulb_c = (wetbulb_f - 32) * 5/9
 
         # Convert the pressure to HectoPascals
-        pressure_hpa = pressure_hg * 3386.389
+        pressure_hpa = pressure_hg * 33.86389
 
         # Calculate the dewpoint
         psy.SetUnitSystem(psy.SI)
