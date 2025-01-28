@@ -11,13 +11,16 @@ import pandas as pd
 df = pd.read_csv(r'/home/philip/nwmissouri/buzzline-03-philip/data/hourly_data.csv')
 
 # Drop columns: 'STATION', 'REPORT_TYPE' and 16 other columns
-df = df.drop(columns=['STATION', 'REPORT_TYPE', 'SOURCE', 'BackupElements', 'BackupElevation', 'BackupEquipment', 'BackupLatitude', 'BackupLongitude', 'BackupName', 'HourlyAltimeterSetting', 'WindEquipmentChangeDate', 'HourlyWindSpeed', 'HourlyWindDirection', 'HourlyVisibility', 'HourlyStationPressure', 'HourlySeaLevelPressure', 'HourlyRelativeHumidity', 'HourlyPrecipitation'])
+df = df.drop(columns=['STATION', 'REPORT_TYPE', 'SOURCE', 'BackupElements', 'BackupElevation', 'BackupEquipment', 'BackupLatitude', 'BackupLongitude', 'BackupName', 'HourlyAltimeterSetting', 'WindEquipmentChangeDate', 'HourlyWindSpeed', 'HourlyWindDirection', 'HourlyVisibility', 'HourlySeaLevelPressure', 'HourlyRelativeHumidity', 'HourlyPrecipitation'])
 
 # Drop column: 'HourlyDewPointTemperature'
 df = df.drop(columns=['HourlyDewPointTemperature'])
 
 # Change the hourly dry bulb temperature column to numeric
 df['HourlyDryBulbTemperature'] = pd.to_numeric(df['HourlyDryBulbTemperature'], errors='coerce')
+
+# Change the hourly Station Pressurecolumn to numeric
+df['HourlyStationPressure'] = pd.to_numeric(df['HourlyStationPressure'], errors='coerce')
 
 # Drop rows with missing values
 df = df.dropna()

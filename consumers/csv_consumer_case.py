@@ -104,7 +104,7 @@ def detect_stall(rolling_window_deque: deque) -> bool:
 
 #####################################
 # Function to process a single message
-# #####################################
+######################################
 
 
 def process_message(message: str, rolling_window: deque, window_size: int) -> None:

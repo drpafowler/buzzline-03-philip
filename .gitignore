@@ -13,3 +13,4 @@ __pycache__/
 .DS_Store
 data/hourly_data.csv
 data/hourly_data_clean.csv
+data/hourly_data_received.csv

@@ -105,12 +105,17 @@ def generate_messages(file_path: pathlib.Path):
                         logger.error(f"Missing 'Wet Bulb Temperature' column in row: {row}")
                         continue
 
+                    if "HourlyStationPressure" not in row:
+                        logger.error(f"Missing 'Station Pressure' column in row: {row}")
+                        continue
+
                     # Generate a timestamp and prepare the message
                     current_timestamp = datetime.utcnow().isoformat()
                     message = {
                         "timestamp": current_timestamp,
                         "HourlyDryBulbTemperature": float(row["HourlyDryBulbTemperature"]),
                         "HourlyWetBulbTemperature": float(row["HourlyWetBulbTemperature"]),
+                        "HourlyStationPressure": float(row["HourlyStationPressure"]),
                     }
                     logger.debug(f"Generated message: {message}")
                     yield message

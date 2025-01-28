@@ -3,28 +3,21 @@ import streamlit as st
 import plotly.graph_objects as go
 
 # Load the data
-df = pd.read_csv('data/data.csv', header=None)
-df.columns = ['Datetime', 'Temperature']
-df['Datetime'] = pd.to_datetime(df['Datetime'])
+df = pd.read_csv('data/hourly_data_received.csv')
+df['timestamp'] = pd.to_datetime(df['timestamp'])
 
 # Create the Streamlit app
-st.title('Real-Time Temperature Monitor')
+st.title('Real-Time Dew Point Calculator')
 
 # Add a button to refresh the data
 if st.button('Refresh Data'):
-  # Read the updated data
-  df = pd.read_csv('data/data.csv', header=None)
-  df.columns = ['Datetime', 'Temperature']
-  df['Datetime'] = pd.to_datetime(df['Datetime'])
 
-  # Display the updated data
-  st.dataframe(df[['Datetime', 'Temperature']].tail(10))
+    # Display the updated data
+    st.dataframe(df[['timestamp', 'drybulb_c', 'wetbulb_c', 'pressure_hpa', 'dewpoint_c']].tail(10))
 
-# Create a line chart
-fig = go.Figure(data=[go.Scatter(x=df['Datetime'], y=df['Temperature'], mode='lines+markers')])
+    # Create a line chart
+    fig = go.Figure(data=[go.Scatter(x=df['timestamp'], y=df['dewpoint_c'], mode='lines+markers')])
+    fig.update_layout(title='Dewpoint Over Time', xaxis_title='Date', yaxis_title='Dewpoint Temperature (C)')
 
-# Set the title and axis labels
-fig.update_layout(title='Temperature Over Time', xaxis_title='Datetime', yaxis_title='Temperature (F)')
-
-# Display the chart
-st.plotly_chart(fig)
+    # Display the chart
+    st.plotly_chart(fig)
